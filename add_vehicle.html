@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .error{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" method="post" onsubmit="return validateForm();">
+            <table id="main" width="950" border="0">
+
+                <tbody><tr align="left">
+                        <td colspan="4" bgcolor="#CCCCCC">Enter Vehicle Records</td>
+                    </tr>
+
+                    <tr align="left">
+                        <td width="192">Vehicle Number:</td>
+                        <td width="287"><input type="text" name="VehicleID" id="VehicleID" size="20" maxlength="15" autofocus="autofocus" tabindex="1">
+                            <label>Ex: (AA-2525)</label>
+                            <div id="VehicleIDMsg"></div>
+                        </td>
+                        <td width="142">Chassis No:</td>
+                        <td width="301">
+                            <input type="text" name="ChassisNo" id="ChassisNo" size="30" maxlength="20" tabindex="9">
+                            <div id="ChassisNoMsg"></div>
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td>Select Vehicle Brand:</td>
+                        <td>                                
+                                <input type="radio" name="Brand" id="TOYOTA" value="TOYOTA"><label>TOYOTA</label>
+                                <input type="radio" name="Brand" id="SUZUKI" value="SUZUKI"><label>SUZUKI</label>
+                                <input type="radio" name="Brand" id="NISSAN" value="NISSAN"><label>NISSAN</label>
+                                <input type="radio" name="Brand" id="MITSUBISHI" value="MITSUBISHI"><label>MITSUBISHI</label>
+                                <input type="radio" name="Brand" id="HONDA" value="HONDA"><label>HONDA</label>
+                                <input type="radio" name="Brand" id="YAMAHA" value="YAMAHA"><label>YAMAHA</label>
+                                <input type="radio" name="Brand" id="HONDA DIO" value="HONDA DIO"><label>HONDA DIO</label>
+                          
+                            
+                        </td>
+                        <td>Seat Capacity:</td>
+                        <td>
+                            <input type="text" name="SeatCapacity" id="SeatCapacity" size="10" tabindex="10">
+                            <label>Ex:8</label>
+                            <div id="SeatCapacityMsg"></div>
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td>Model:</td>
+                        <td>
+                            <input type="text" name="model" id="model" size="20" tabindex="10">
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td>Owner:</td>
+                        <td>
+                            <select name="Owner" id="Owner"  style="width:200px;" tabindex="3">
+                                <option value="Not Selected">Select Owner</option>
+                                <option value="EDB Owned">EDB Owned</option>
+                                <option value="Hired">Hired</option>
+                                <option value="Leased">Leased</option>
+                            </select>
+                        </td>
+                        <td>Owner name : (If hired)</td>
+                        <td>
+                            <input type="text" name="OwnerName" id="OwnerName" size="20" tabindex="10">
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td>A/C Type:</td>
+                        <td>
+                            <select name="ACType" id="ACType" style="width:200px;" tabindex="11">
+                                <option value="0">Select AC Type</option>
+                                <option value="1">AC</option>
+                                <option value="2">Non AC</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td>Registered Date:</td>
+                        <td>
+                            <input type="date" id="txtDate" name="txtDate" size="20" tabindex="4" >
+                            <label>Ex: (dd/mm/yyyy)</label>
+                        </td>
+                        <td>Allocated Driver:</td>
+                        <td>
+                            <select name="AllocatedDriver" id="AllocatedDriver" style="width:200px;" tabindex="12">
+                                <option value="0">Select Driver Name</option>
+                                <option value="1">Not Applicable</option>
+                                <option value="10">K.J.Perera</option>
+                                <option value="11">H.G.Amarasiri</option>
+                                <option value="13">B.C. Cooray</option>
+                                <option value="14">G.G.N.Premasiri</option>
+                                <option value="15">W.A.Ruwan Anurada</option>
+                                <option value="16">S.R.Ratnasiri</option>
+                                <option value="17">I.C.P.Wimalagunaratne</option>
+                                <option value="18">E.A.D.Jayasiri</option>
+                                <option value="19">K.K.N.Nishantha</option>
+                                <option value="20">D.B.Senaviratna</option>
+                                <option value="21">E.A.D.E.Nalaka Edirisinghe</option>
+                                <option value="22">T.M.C.Thilakaratne</option>
+                                <option value="23">A.D.PANDULA</option>
+                                <option value="24">K.W.A.Rasika Priyadarsana</option>
+                                <option value="25">D.L.C.Pushpakumara</option>
+                                <option value="26">S.M.T.B.Senanayaka</option>
+                                <option value="27">C.Sajith Peiris</option>
+                                <option value="28">L.N.Madusanka Perera</option>
+                                <option value="29">E.W.G.C.Shantha Bandara</option>
+                                <option value="30">M.A.B.P.Marasinghe</option>
+                                <option value="31">S.S.K.P.Horagolla</option>
+                                <option value="32">N.Pushpakumara Perera</option>
+                                <option value="34">R.Sathiyamoorthi</option>
+                                <option value="35">A.S Karunaratne</option>
+                                <option value="36">I.V.Wasantha Kumara</option>
+                                <option value="37">G.K.A.Lakshan Chathuranga</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td>Allocated User:</td>
+                        <td><input type="text" name="AllocatedUser" id="AllocatedUser" size="20" maxlength="15" tabindex="5"></td>
+                        <td>Tyre Size:</td>
+                        <td><select name="TyreSize" id="TyreSize" style="width:200px;" tabindex="13">
+                                <option value="0">Select Tyre Size</option>
+                                <option value="1">145x80x12</option>
+                                <option value="11">145x89x13</option>
+                                <option value="2">155x80x12</option>
+                                <option value="4">165x80x13</option>
+                                <option value="12">175x14</option>
+                                <option value="14">175x14</option>
+                                <option value="13">175x14</option>
+                                <option value="3">175x60x14ceat</option>
+                                <option value="6">175x80x14</option>
+                                <option value="5">185x14</option>
+                                <option value="7">185x80x16</option>
+                                <option value="10">195x16</option>
+                                <option value="9">265x70x16</option>
+                                <option value="8">275x18/300x18</option>
+                                <option value="15">90x100x53</option>
+                            </select></td>
+                    </tr>
+                    <tr align="left">
+                        <td>Fuel Tank Capacity (Liters):</td>
+                        <td><input type="text" name="FuelTankCapacity" id="FuelTankCapacity" size="10" tabindex="6">
+                            <label>Ex:25</label></td>
+                        <td>Vehicle Type:</td>
+                        <td><select name="vtype" id="vtype" style="width:200px;" tabindex="14">
+                                <option value="0">Select Vehicle Type</option>
+                                <option value="2">BUS</option>
+                                <option value="3">CAR</option>
+                                <option value="4">VAN</option>
+                                <option value="5">DOUBLECAB</option>
+                                <option value="6">MOTOR CYCLE</option>
+                            </select></td>
+                    </tr>
+                    <tr align="left">
+                        <td>Fuel Type:</td>
+                        <td><select name="fuel_type" id="fuel_type" style="width:260px;" tabindex="7">
+                                <option value="0">Select Fuel Type</option>
+
+                                <option value="1">DIESEL</option>
+
+                                <option value="2">PETROL</option>
+                            </select></td>
+                        <td>Engine Capacity:</td>
+                        <td><input type="text" name="EngineCapacity" id="EngineCapacity" size="20" maxlength="100" tabindex="15">(1800 cc)</td>
+                    </tr>
+                    <tr align="left">
+                        <td>Engine No:</td>
+                        <td><input type="text" name="EngineNo" id="EngineNo" size="30" maxlength="20" tabindex="8"></td>
+                        <!-- <td></td>-->
+                        <!--<td></td>-->
+                        <td>Value as per the Valuation Date:</td>
+                        <td><input type="text" name="MarcketValue" id="MarcketValue" size="30" maxlength="100" tabindex="15"></td>
+                    </tr>
+                    <!-- ========== Add Valuation Date and Validity Period============ -->
+                    <tr align="left">
+                        <td>Last Valuation Date: </td>
+                        <!-- <td><input type="text" id="datepicker"/></td>-->
+                        <!-- <td><input type="text" name="ValuationDate" id="ValuationDate" size="30" maxlength="20" tabindex="8" />(dd/mm/yyyy)</td>-->
+                        <td><input type="date" name="ValuationDate" id="ValuationDate" size="30" maxlength="20" tabindex="8" readonly="" class="hasDatepicker"><br>(dd/mm/yyyy)</td>
+                        <!-- <td></td>-->
+                        <!--<td></td>-->
+                        <td>Validity Period: </td>
+                        <td><input type="text" name="ValidityPeriod" id="ValidityPeriod" size="30" maxlength="100" tabindex="15">(Months)</td>
+                    </tr>
+                    <tr align="left">
+                        <td>Purchased Value: </td>
+                        <td><input type="text" name="PurchasedValue" id="PurchasedValue" size="30" maxlength="100" tabindex="15">(Rs.)</td>
+                        <td>Milage (At the time of Purchase): </td>
+                        <td><input type="text" name="Milage" id="Milage" size="30" maxlength="100" tabindex="15">(km)</td>
+                    </tr>
+                    <tr align="left">
+                        <td>Purchased Date: </td>
+                        <td><input type="date" name="PurchasedDate" id="PurchasedDate" size="30" maxlength="20" tabindex="8" readonly="" class="hasDatepicker"><br>(dd/mm/yyyy)</td>
+                        <td>Year of Manufacture: </td>
+                        <td><input type="text" name="manufacture_year" id="manufacture_year" size="30" maxlength="20" tabindex="16"><br>(2013)</td>
+                    </tr>
+                    <tr>
+                        <td>Remarks:</td>
+                        <td><textarea name="Remarks" id="Remarks" size="50" maxlength="100" tabindex="15"></textarea></td>
+                        <td></td></tr>
+                    <tr align="left">
+                        <td></td>
+                        <td colspan="3"><input type="submit" value="Save" name="s_vrecs"  tabindex="16" style="user-select: auto;">
+                            <input name="reset" type="reset" value="Cancel" style="user-select: auto;">
+                            <font color="green"></font></td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="4"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <script>
+            function validateForm() {
+                var error = new Array();
+
+                var VehicleID = document.getElementById("VehicleID").value;
+                if (VehicleID == "") {
+                    error.push({VehicleIDMsg: "The Vehicle ID should not be empty..!"});
+                } else {
+                    hideErrorMessage('VehicleIDMsg');
+                }
+                var ChassisNo = document.getElementById("ChassisNo").value;
+                if (ChassisNo == "") {
+                    error.push({ChassisNoMsg: 'The Chassis No should not be empty..!'});
+                } else {
+                    hideErrorMessage('ChassisNoMsg');
+                }
+                var SeatCapacity = document.getElementById("SeatCapacity").value;
+                if (SeatCapacity == "") {
+                    error.push({SeatCapacityMsg: 'The Seat Capacity should not be empty..!'});
+                } else {
+                    if (isNaN(SeatCapacity)) {
+                        error.push({SeatCapacityMsg: 'The Seat Capacity is invalid..!'});
+                    } else {
+                        hideErrorMessage('SeatCapacityMsg');
+                    }
+                }
+
+
+                if (error.length > 0) {
+                    Object.entries(error).forEach(([key, value]) => {
+                        Object.entries(value).forEach(([k, v]) => {
+                            showErrorMessage(k, v);
+                        });
+                    });
+                    return false;
+                }
+            }
+
+            function showErrorMessage(id, msg) {
+                document.getElementById(id).innerHTML = msg;
+                document.getElementById(id).classList.add("error");
+            }
+            function hideErrorMessage(id) {
+                document.getElementById(id).innerHTML = "";
+                document.getElementById(id).classList.remove("error");
+            }
+        </script>
+    </body>
+</html>
